@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Covid-19 - Murilo Henrique</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19 - Murilo Henrique</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
       <h1>Notícias Covid-19</h1>
-  </header>
-  <nav class="navigation">
-    <a href wm-nav="home.html" class="item">Início</a>
-    <a href wm-nav="contact.html" class="item">Contato</a>
-    <a href wm-nav="know-more.html" class="item">Saiba Mais</a>
-    <a href wm-nav="about.html" class="item">Sobre</a>
-  </nav>
-  <section id="conteudo" class="content"></section>
-  <footer class="footer">
+    </header>
+    <nav class="navigation">
+      <a href wm-nav="home.html" class="item">Início</a>
+      <a href wm-nav="contact.html" class="item">Contato</a>
+      <a href wm-nav="know-more.html" class="item">Saiba Mais</a>
+      <a href wm-nav="about.html" class="item">Sobre</a>
+    </nav>
+    <section id="conteudo" class="content"></section>
+    <footer class="footer">
       Made with <3 by Murilo Henrique
-  </footer>
-  <script>
-      document.querySelectorAll('[wm-nav]').forEach(link => {
-          const conteudo = document.getElementById('conteudo')
+    </footer>
+    <script>
+      document.querySelectorAll("[wm-nav]").forEach((link) => {
+        const conteudo = document.getElementById("conteudo");
 
-          link.onclick = function (e){
-              e.preventDefault()          
-              fetch(link.getAttribute('wm-nav'))
-                  .then(resp => resp.text())
-                  .then(html => conteudo.innerHTML = html)
-          }
+        link.onclick = function (e) {
+          e.preventDefault();
+          fetch(link.getAttribute("wm-nav"))
+            .then((resp) => resp.text())
+            .then((html) => {
+              return (conteudo.innerHTML = html);
+            });
+        };
 
-          window.onload = () => {
-            fetch('home.html').then(resp => resp.text()).then(html => conteudo.innerHTML = html);
-          }
-      })
-  </script>
-</body>
+        window.onload = () => {
+          fetch("home.html")
+            .then((resp) => resp.text())
+            .then((html) => (conteudo.innerHTML = html));
+        };
+      });
+    </script>
+  </body>
 </html>
