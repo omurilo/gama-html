@@ -1,0 +1,7 @@
+{
+  "name": "gama-covid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Murilo Henrique <oofleaoo@gmail.com>",
+  "license": "MIT"
+}

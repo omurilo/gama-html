@@ -1,0 +1,137 @@
+/* #FF8B69 */
+/* #E86A5F */
+/* #f795aa */
+/* #E85FC1 */
+/* #ED69FF */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1px;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 50px 1fr 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "header nav"
+                       "content content"
+                       "footer footer";
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  background-color: #FF7593;
+  grid-area: header;
+  font-size: 14rem;
+  padding: 10px;
+  color: #fff;
+}
+
+.navigation {
+  grid-area: nav;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  background-color: #FF7593;
+  padding: 5px 35px;
+}
+
+.navigation > .item {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 14rem;
+  position: relative;
+}
+
+.navigation > .item::after {
+  content: " ";
+  background-color: #E86A5F;
+  height: 2px;
+  width: 0;
+  transition: width ease-in-out 350ms;
+}
+
+.navigation > .item:hover::after {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  grid-area: content;
+  padding: 15px 30px;
+  font-size: 14rem;
+  background-color: #f795aa;
+}
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+  font-size: 14rem;
+}
+
+.news-container {
+
+}
+
+.news-container > .new {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.title {
+  font-size: 32rem;
+  color: #FFF;
+}
+
+.subtitle {
+  font-size: 16rem;
+  color: #6f0909;
+  padding: 0 5px;
+}
+
+.description {
+  color: #F5F5F5;
+  padding: 10px;
+}
+
+.audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.know-more-news {
+  list-style: none;
+  color: #FFF;
+}
+
+.know-more-news > .item::before {
+  content: ">";
+  margin-right: 5rem;
+  font-size: 1.2em;
+}
+
+.know-more-news > .item {
+  padding: 10px;
+}
+
+.know-more-news > .item > a {
+  text-decoration: none;
+  color: #6f0909;
+}
